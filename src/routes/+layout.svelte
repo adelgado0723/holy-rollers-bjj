@@ -1,0 +1,32 @@
+<script lang="ts">
+	// The ordering of these imports is critical to your app working properly
+	import '@skeletonlabs/skeleton/themes/theme-modern.css';
+	// If you have source.organizeImports set to true in VSCode, then it will auto change this ordering
+	import '@skeletonlabs/skeleton/styles/all.css';
+	// Most of your app wide CSS should be put in this file
+	import '../app.postcss';
+	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+
+	export const prerender = true;
+	export const ssr = false;
+</script>
+
+<AppShell>
+	<svelte:fragment slot="header"
+		><AppBar class="text-3xl">
+			<svelte:fragment slot="lead"
+				><img alt="hamburger menu" src="/hamburger.svg" /></svelte:fragment
+			>
+			Holy Rollers BJJ
+			<svelte:fragment slot="trail"><img alt="hamburger menu" src="/calendar.svg" /></svelte:fragment>
+		</AppBar></svelte:fragment
+	>
+	<!-- <svelte:fragment slot="sidebarLeft">Sidebar Left</svelte:fragment> -->
+	<!-- <svelte:fragment slot="sidebarRight">Sidebar Right</svelte:fragment> -->
+	<!-- <svelte:fragment slot="pageHeader">Page Header</svelte:fragment> -->
+	<!-- Router Slot -->
+	<slot />
+	<!-- ---- / ---- -->
+	<!-- <svelte:fragment slot="pageFooter">Page Footer</svelte:fragment> -->
+	<!-- <svelte:fragment slot="footer">Footer</svelte:fragment> -->
+</AppShell>
