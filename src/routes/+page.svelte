@@ -2,8 +2,8 @@
 	import { Avatar } from '@skeletonlabs/skeleton';
 </script>
 
-<div class="container h-full mx-auto flex flex-col justify-center items-center">
-	<div class="space-y-5">
+<div class="container h-full mx-auto gap-10 flex flex-col justify-center items-center">
+	<div class="space-y-5 m-4">
 		<h1 class="text-4xl">Holy Rollers BJJ</h1>
 		<p class="text-lg">
 			Hosted by Belleview United Methodist Church, the Holy Rollers BJJ club is a faith based
@@ -11,21 +11,18 @@
 		</p>
 	</div>
 
-	<div class="images flex gap-4 items-center justify-center m-4">
-		<Avatar
-			src="BJJClub/Class2_5-24-2023.jpeg"
-			width="w-32"
-			rounded="rounded-full"
-		/>
-		<Avatar
-			src="BJJClub/Class4_5-24-2023.jpeg"
-			width="w-32"
-			rounded="rounded-full"
-		/>
-		<Avatar
-			src="BJJClub/Class3_5-24-2023.jpeg"
-			width="w-32"
-			rounded="rounded-full"
-		/>
+	<div class="images flex gap-10 items-center justify-center m-4">
+		<div>
+			<div class="bg-primary-500 fixed w-32 h-32 rounded-full translate-x-1 translate-y-0.5" />
+			<Avatar class="relative" src="BJJClub/Class5_06-02-2023.jpeg" width="w-32" rounded="rounded-full" />
+		</div>
+		<div>
+			<div class="bg-secondary-500 fixed w-32 h-32 rounded-full translate-x-1 translate-y-0.5" />
+			<Avatar class="relative" src="BJJClub/Class2_06-02-2023.jpeg" width="w-32" rounded="rounded-full" />
+		</div>
+		<div>
+			<div class="bg-primary-200 -500 fixed w-32 h-32 rounded-full translate-x-1 translate-y-0.5" />
+			<Avatar class="relative" src="BJJClub/Class4_06-02-2023.jpeg" width="w-32" rounded="rounded-full" />
+		</div>
 	</div>
 </div>
