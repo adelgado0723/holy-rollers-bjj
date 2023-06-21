@@ -4,7 +4,7 @@
 
 <div class="container h-full mx-auto flex flex-col justify-center items-center">
 	<div class="space-y-5">
-		<h1 class="text-4xl">Holly Rollers BJJ</h1>
+		<h1 class="text-4xl">Holy Rollers BJJ</h1>
 		<p class="text-lg">
 			Hosted by Belleview United Methodist Church, the Holy Rollers BJJ club is a faith based
 			martial arts programed aimed at teaching children ages 4-16 discipline and self-defense
