@@ -11,7 +11,7 @@
 
 <AppShell>
 	<svelte:fragment slot="header"
-		><AppBar class="text-3xl">
+		><AppBar class="text-4xl">
 			<svelte:fragment slot="lead"
 				><img alt="hamburger menu" src="/hamburger.svg" /></svelte:fragment
 			>
