@@ -2,11 +2,29 @@
 	import { Avatar } from '@skeletonlabs/skeleton';
 </script>
 
-<div class="container mx-auto flex h-full flex-col items-center justify-center gap-10">
+<div class=" container relative mx-auto flex h-full flex-col items-center justify-center gap-10">
 	<div class="m-8 flex flex-col items-center justify-center gap-8">
 		<div class="text-6xl text-secondary-500 font-token">BELLEVIEW UMC</div>
 		<div class="text-8xl font-heading-token">Holy Rollers</div>
 		<div class="text-6xl text-secondary-500 font-token">JIU JITSU CLUB</div>
+	</div>
+	<div class="absolute left-0 top-0 z-[-1] -translate-x-28 -translate-y-12">
+		<div class="absolute left-1 top-1 z-[-2] h-48 w-48 rounded-full bg-primary-200" />
+		<Avatar
+			class=" z-[-1]"
+			src="BJJClub/Class2_06-02-2023.jpeg"
+			width="w-48"
+			rounded="rounded-full"
+		/>
+	</div>
+	<div class="absolute right-0 top-52 z-[-1] translate-x-28">
+		<div class="absolute left-1 top-1 z-[-2] h-48 w-48 rounded-full bg-primary-200" />
+		<Avatar
+			class=" z-[-1]"
+			src="BJJClub/Class4_06-02-2023.jpeg"
+			width="w-48"
+			rounded="rounded-full"
+		/>
 	</div>
 
 	<ol class="breadcrumb flex h-full flex-row justify-center">
@@ -23,29 +41,6 @@
 			Hosted by Belleview United Methodist Church, the Holy Rollers BJJ club is a faith based
 			martial arts programed aimed at teaching children ages 4-16 discipline and self-defense
 		</p>
-	</div>
-
-	<div class="m-4 flex items-center justify-center gap-10">
-		<div class="flex flex-col items-center justify-center">
-			<div class="z-0 h-32 w-32 translate-x-1 translate-y-[4.1rem] rounded-full bg-secondary-400" />
-			<Avatar
-				class="z-10 translate-y-[-4.1em]"
-				src="BJJClub/Class2_06-02-2023.jpeg"
-				width="w-32"
-				rounded="rounded-full"
-			/>
-		</div>
-		<div class="flex flex-col items-center justify-center">
-			<div
-				class="z-0 h-32 w-32 translate-x-1 translate-y-[4.1rem] self-center rounded-full bg-primary-200"
-			/>
-			<Avatar
-				class=" z-10 translate-y-[-4.1rem]"
-				src="BJJClub/Class4_06-02-2023.jpeg"
-				width="w-32"
-				rounded="rounded-full"
-			/>
-		</div>
 	</div>
 
 	<div class="m-4 w-full">
