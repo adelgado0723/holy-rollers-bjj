@@ -3,21 +3,21 @@
 </script>
 
 <div class="container mx-auto flex h-full flex-col items-center justify-center gap-10">
-	<div class="m-8 flex flex-col items-center justify-center gap-8 space-y-5">
+	<div class="m-8 flex flex-col items-center justify-center gap-8">
 		<div class="text-6xl text-secondary-500 font-token">BELLEVIEW UMC</div>
 		<div class="text-8xl font-heading-token">Holy Rollers</div>
 		<div class="text-6xl text-secondary-500 font-token">JIU JITSU CLUB</div>
 	</div>
 
-	<ol class="breadcrumb flex-row justify-center">
+	<ol class="breadcrumb flex h-full flex-row justify-center">
 		<li class="crumb">
 			<a href="#who-we-are" class="anchor">Who We Are</a>
 		</li>
-		<li class="crumb-separator" aria-hidden>></li>
+		<li class="crumb-separator" aria-hidden>/</li>
 		<li class="crumb"><a class="anchor" href="/schedule">Schedule</a></li>
 	</ol>
 
-	<div class="m-4 space-y-5">
+	<div class="m-4">
 		<h1 id="who-we-are">Who we are</h1>
 		<p class="text-lg">
 			Hosted by Belleview United Methodist Church, the Holy Rollers BJJ club is a faith based
@@ -25,29 +25,30 @@
 		</p>
 	</div>
 
-	<div class="m-4 w-full flex flex-row items-center justify-center gap-10 space-y-5">
-		<div>
-			<div
-				class="z-0 h-32 w-32 translate-x-1 translate-y-[8.10rem] rounded-full bg-secondary-400"
-			/>
+	<div class="m-4 flex items-center justify-center gap-10">
+		<div class="flex flex-col items-center justify-center">
+			<div class="z-0 h-32 w-32 translate-x-1 translate-y-[4.1rem] rounded-full bg-secondary-400" />
 			<Avatar
-				class="z-10"
+				class="z-10 translate-y-[-4.1em]"
 				src="BJJClub/Class2_06-02-2023.jpeg"
 				width="w-32"
 				rounded="rounded-full"
 			/>
 		</div>
-		<div>
-			<div class="z-0 h-32 w-32 translate-x-1 translate-y-[8.10rem] rounded-full bg-primary-200" />
+		<div class="flex flex-col items-center justify-center">
+			<div
+				class="z-0 h-32 w-32 translate-x-1 translate-y-[4.1rem] self-center rounded-full bg-primary-200"
+			/>
 			<Avatar
-				class="z-10"
+				class=" z-10 translate-y-[-4.1rem]"
 				src="BJJClub/Class4_06-02-2023.jpeg"
 				width="w-32"
 				rounded="rounded-full"
 			/>
 		</div>
 	</div>
-	<div class="m-4 space-y-5">
+
+	<div class="m-4 w-full">
 		<h1>Schedule</h1>
 		<p class="m-4">This is a test paragraph</p>
 	</div>
