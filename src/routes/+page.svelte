@@ -13,7 +13,7 @@
 		<li class="crumb">
 			<a href="#who-we-are" class="anchor">Who We Are</a>
 		</li>
-		<li class="crumb-separator" aria-hidden>/</li>
+		<li class="crumb-separator" aria-hidden>></li>
 		<li class="crumb"><a class="anchor" href="/schedule">Schedule</a></li>
 	</ol>
 
@@ -25,21 +25,30 @@
 		</p>
 	</div>
 
-	<div class="m-4 flex items-center justify-center gap-10">
+	<div class="m-4 w-full flex flex-row items-center justify-center gap-10 space-y-5">
 		<div>
 			<div
-				class="absolute z-0 h-32 w-32 translate-x-1 translate-y-0.5 rounded-full bg-secondary-400"
+				class="z-0 h-32 w-32 translate-x-1 translate-y-[8.10rem] rounded-full bg-secondary-400"
 			/>
 			<Avatar
-				class="absolute"
+				class="z-10"
 				src="BJJClub/Class2_06-02-2023.jpeg"
 				width="w-32"
 				rounded="rounded-full"
 			/>
 		</div>
 		<div>
-			<div class="absolute h-32 w-32 translate-x-1 translate-y-0.5 rounded-full bg-primary-200" />
-			<Avatar src="BJJClub/Class4_06-02-2023.jpeg" width="w-32" rounded="rounded-full" />
+			<div class="z-0 h-32 w-32 translate-x-1 translate-y-[8.10rem] rounded-full bg-primary-200" />
+			<Avatar
+				class="z-10"
+				src="BJJClub/Class4_06-02-2023.jpeg"
+				width="w-32"
+				rounded="rounded-full"
+			/>
 		</div>
+	</div>
+	<div class="m-4 space-y-5">
+		<h1>Schedule</h1>
+		<p class="m-4">This is a test paragraph</p>
 	</div>
 </div>
