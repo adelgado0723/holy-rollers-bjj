@@ -38,24 +38,25 @@
 			/>
 		</div>
 	</div>
-	<ol
-		class="breadcrumb sticky top-0 m-24 box-border flex h-48 w-[100vw] flex-row justify-center bg-secondary-500"
-	>
-		<li class="crumb">
-			<a href="#who-we-are" class="anchor">Who We Are</a>
-		</li>
-		<li class="crumb-separator" aria-hidden>/</li>
-		<li class="crumb"><a class="anchor" href="/schedule">Schedule</a></li>
-		<li class="crumb-separator" aria-hidden>/</li>
-		<li class="crumb"><a class="anchor" href="#location">Location</a></li>
-		<li class="crumb-separator" aria-hidden>/</li>
-		<li class="crumb"><a class="anchor" href="#class-overview">Class Overview</a></li>
-		<li class="crumb-separator" aria-hidden>/</li>
-		<li class="crumb"><a class="anchor" href="#register">Register</a></li>
-		<li class="crumb-separator" aria-hidden>/</li>
-		<li class="crumb"><a class="anchor" href="#contact-us">Contact Us</a></li>
-	</ol>
-
+	<nav class="p-4 text-sm md:text-md h-48 sticky top-0 z-20 m-24 w-[100vw] variant-glass-secondary ">
+		<ol
+			class="breadcrumb w-[100vw] flex flex-row items-center justify-center"
+		>
+			<li class="crumb">
+				<a href="#who-we-are" class="anchor">Who We Are</a>
+			</li>
+			<li class="crumb-separator" aria-hidden>/</li>
+			<li class="crumb"><a class="anchor" href="/schedule">Schedule</a></li>
+			<li class="crumb-separator" aria-hidden>/</li>
+			<li class="crumb"><a class="anchor" href="#location">Location</a></li>
+			<li class="crumb-separator" aria-hidden>/</li>
+			<li class="crumb"><a class="anchor" href="#class-overview">Class Overview</a></li>
+			<li class="crumb-separator" aria-hidden>/</li>
+			<li class="crumb"><a class="anchor" href="#register">Register</a></li>
+			<li class="crumb-separator" aria-hidden>/</li>
+			<li class="crumb"><a class="anchor" href="#contact-us">Contact Us</a></li>
+		</ol>
+	</nav>
 	<div id="who-we-are" class="m-3 w-full pt-14 md:m-4">
 		<h1>Who we are</h1>
 		<p class="text-lg">
@@ -69,9 +70,17 @@
 		<p class="m-3 md:m-4">This is a test paragraph... calendar. Add to calender option?</p>
 	</div>
 
-	<div id="location" class="m-3 w-full pt-14 md:m-4">
-		<h1>Location</h1>
-		<p class="m-3 md:m-4">This is a test paragraph... Include a map?</p>
+	<div id="location" class="card variant-glass m-3 w-full p-8 pt-14 md:m-4">
+		<header class="card-header mb-14 text-center text-7xl font-heading-token">Location</header>
+		<section class="m-3 md:m-4">
+			<a
+				href="https://www.google.com/maps/place/Belleview+United+Methodist+Church/@29.0555551,-82.0599103,17z/data=!3m1!4b1!4m6!3m5!1s0x88e7d1c600279c15:0xba8cf7130c9e9460!8m2!3d29.0555504!4d-82.0573354!16s%2Fg%2F1tf1cl1r?entry=ttu"
+				class="text-tertiary-200"
+			>
+				Belleview United Methodist Church <br />
+				5640 SE Brown Rd, Belleview, FL 34420
+			</a>
+		</section >
 	</div>
 
 	<div id="class-overview" class="m-3 w-full pt-14 md:m-4">
