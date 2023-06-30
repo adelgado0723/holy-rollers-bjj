@@ -9,7 +9,7 @@
 	import { Avatar } from '@skeletonlabs/skeleton';
 </script>
 
-<AppShell regionPage="relative" slotPageHeader="relative  top-0 z-10">
+<AppShell>
 	<!-- <svelte:fragment slot="header"> -->
 	<!-- 	<AppBar class="sticky top-0 text-2xl md:text-4xl" padding="p-1 md:p-2"> -->
 	<!-- 		<svelte:fragment slot="lead" -->
