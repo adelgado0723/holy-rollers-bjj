@@ -1,39 +1,36 @@
 <script>
 	import { Avatar } from '@skeletonlabs/skeleton';
+	import CalendarController from '$lib/CalendarController.svelte';
 </script>
 
 <div
-	class=" container relative mx-auto flex h-full w-full flex-col items-center justify-center gap-28 scroll-smooth"
+	class="section mx-auto flex h-full w-full flex-col items-center justify-center gap-28 scroll-smooth"
 >
-	<div class="relative my-28 flex h-full w-full flex-col items-center justify-center">
-		<div class="absolute left-0 top-0 z-[-1] -translate-x-6 -translate-y-8">
+	<div class="flex h-full w-full flex-col items-center justify-center gap-5 md:my-24 lg:my-10">
+		<div class="relative self-start">
 			<div
-				class="absolute left-1 top-1 z-[-2] h-32 w-32 rounded-full bg-primary-200 md:h-48 md:w-48"
+				class="absolute left-1 top-1 z-[-2] h-36 w-36 rounded-full bg-primary-200 md:h-48 md:w-48"
 			/>
 			<Avatar
 				class=" z-[-1]"
 				src="BJJClub/Class2_06-02-2023.jpeg"
-				width="w-32 md:w-48"
+				width="w-36 md:w-48"
 				rounded="rounded-full"
 			/>
 		</div>
-
-		<div
-			class="m-4 mt-[4.5rem] flex flex-col items-center justify-center gap-6 md:m-8 md:mt-2 md:gap-8"
-		>
+		<div class="flex flex-col items-center justify-center gap-6 md:gap-8">
 			<div class="text-4xl text-secondary-500 font-token md:text-6xl">BELLEVIEW UMC</div>
 			<div class="text-5xl font-heading-token md:text-8xl">Holy Rollers</div>
 			<div class="text-4xl text-secondary-500 font-token md:text-6xl">JIU JITSU CLUB</div>
 		</div>
-
-		<div class="absolute right-0 top-80 z-[-1] translate-x-5">
+		<div class="relative self-end">
 			<div
-				class="absolute left-1 top-1 z-[-2] h-32 w-32 rounded-full bg-primary-200 md:h-48 md:w-48"
+				class="absolute left-1 top-1 z-[-2] h-36 w-36 rounded-full bg-primary-200 md:h-48 md:w-48"
 			/>
 			<Avatar
 				class=" z-[-1]"
 				src="BJJClub/Class4_06-02-2023.jpeg"
-				width="w-32 md:w-48"
+				width="w-36 md:w-48"
 				rounded="rounded-full"
 			/>
 		</div>
@@ -52,7 +49,7 @@
 			</li>
 			<li class="crumb-separator" aria-hidden>/</li>
 			<li class="crumb sm:hover:text-primary-500">
-				<a class="" href="/schedule">Schedule</a>
+				<a class="" href="#schedule">Schedule</a>
 			</li>
 			<li class="crumb-separator" aria-hidden>/</li>
 			<li class="crumb sm:hover:text-primary-500">
@@ -65,8 +62,8 @@
 		</ol>
 	</nav>
 
-	<div id="about" class="card variant-glass-surface m-3 w-full p-8 pt-14 md:m-4">
-		<header class="card-header mb-24 text-center text-5xl font-heading-token">Contact Us</header>
+	<div id="about" class="card variant-glass-surface m-3 w-full p-8 pt-20 md:m-4">
+		<header class="card-header mb-16 text-center text-5xl font-heading-token">About</header>
 
 		<div class="m-3 flex flex-col items-center justify-center gap-8 md:m-4">
 			<p class=" unstyled text-lg">
@@ -78,18 +75,18 @@
 				kids to forming a habit of prayer. These classes are free and open to kids 4 years old - 16
 				years old. If you are interested in signing your child up please click 'Get Started'!
 			</p>
-      <button type="button" class="btn-icon bg-gradient-to-br variant-gradient-warning-success"> test</button>
-			<a href="#get-started" class="unstyled btn btn-icon">Get Started</a>
+			<a href="#get-started" class="btn variant-filled m-5">Get Started</a>
 		</div>
 	</div>
 
 	<div id="schedule" class="m-3 w-full pt-14 md:m-4">
 		<h1>Schedule</h1>
 		<p class="m-3 md:m-4">This is a test paragraph... calendar. Add to calender option?</p>
+		<CalendarController />
 	</div>
 
-	<div id="contact-us" class="card variant-glass-surface m-3 w-full p-8 pt-14 md:m-4">
-		<header class="card-header mb-24 text-center text-5xl font-heading-token">Contact Us</header>
+	<div id="contact-us" class="card variant-glass-surface m-3 w-full p-8 pt-20 md:m-4">
+		<header class="card-header mb-16 text-center text-5xl font-heading-token">Contact Us</header>
 
 		<div class="m-3 flex flex-col items-center justify-center gap-8 md:m-4">
 			<p class="unstyled my-8 text-xl">
@@ -147,12 +144,10 @@
 
 		<div id="register" class="m-3 w-full pt-14 md:m-4">
 			<h1>Register</h1>
-			<p class="m-3 md:m-4">This is a test paragraph... download registration forms</p>
+			<p class="m-3 md:m-4">
+				This service is <span class="italic">free</span> to the community and currently enrolling new
+				students. Once capacity is reaches, we will start a wait list.
+			</p>
 		</div>
-	</div>
-
-	<div id="contact-us" class="m-3 w-full pt-14 md:m-4">
-		<h1>Contact Us</h1>
-		<p class="m-3 md:m-4">This is a test paragraph... include a contact form?</p>
 	</div>
 </div>
