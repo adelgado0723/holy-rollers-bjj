@@ -3,44 +3,40 @@
 	import CalendarController from '$lib/CalendarController.svelte';
 </script>
 
-<div
-	class="section mx-auto flex h-full w-full flex-col items-center justify-center gap-28 scroll-smooth"
->
-	<div class="flex h-full w-full flex-col items-center justify-center gap-5 md:my-24 lg:my-10">
-		<div class="relative self-start">
+<div class="section flex h-full w-full flex-col items-center justify-center">
+	<div class="mb-16 flex w-full flex-col items-center justify-center gap-8">
+		<div class="relative flex w-40 items-center justify-center self-start md:w-52 lg:w-64 xl:w-80">
 			<div
-				class="absolute left-1 top-1 z-[-2] h-36 w-36 rounded-full bg-primary-200 md:h-48 md:w-48"
+				class="absolute left-1 top-1 z-[-2] h-36 w-36 rounded-full bg-primary-200 md:h-48 md:w-48 lg:h-60 lg:w-60 xl:h-72 xl:w-72"
 			/>
 			<Avatar
 				class=" z-[-1]"
 				src="BJJClub/Class2_06-02-2023.jpeg"
-				width="w-36 md:w-48"
+				width="w-36 md:w-48 lg:w-60 xl:w-72"
 				rounded="rounded-full"
 			/>
 		</div>
-		<div class="flex flex-col items-center justify-center gap-6 md:gap-8">
+		<div class=" container flex flex-col items-center justify-center gap-6 md:gap-8">
 			<div class="text-4xl text-secondary-500 font-token md:text-6xl">BELLEVIEW UMC</div>
 			<div class="text-5xl font-heading-token md:text-8xl">Holy Rollers</div>
 			<div class="text-4xl text-secondary-500 font-token md:text-6xl">JIU JITSU CLUB</div>
 		</div>
-		<div class="relative self-end">
+		<div class="relative flex w-40 items-center justify-center self-end md:w-52 lg:w-64 xl:w-80">
 			<div
-				class="absolute left-1 top-1 z-[-2] h-36 w-36 rounded-full bg-primary-200 md:h-48 md:w-48"
+				class="absolute left-1 top-1 z-[-2] h-36 w-36 rounded-full bg-primary-200 md:h-48 md:w-48 lg:h-60 lg:w-60 xl:h-72 xl:w-72"
 			/>
 			<Avatar
 				class=" z-[-1]"
 				src="BJJClub/Class4_06-02-2023.jpeg"
-				width="w-36 md:w-48"
+				width="w-36 md:w-48 lg:w-60 xl:w-72"
 				rounded="rounded-full"
 			/>
 		</div>
 	</div>
 	<nav
-		class="app-bar md:text-md variant-glass-secondary sticky top-0 z-20 mt-20 h-14 w-[100vw] py-4 text-sm md:mt-0 md:h-48"
+		class="app-bar md:text-md variant-glass-secondary sticky top-0 z-20 mt-6 h-14 w-[100vw] py-4 text-xs md:mt-0 md:h-16 md:text-lg lg:text-xl"
 	>
-		<ol
-			class="md:text-md flex h-full w-full flex-row items-center justify-center gap-x-4 text-[12px] sm:text-sm"
-		>
+		<ol class="flex h-full w-full flex-row items-center justify-center gap-x-4">
 			<!-- <li class="crumb sm:hidden"> -->
 			<!-- 	<img src="hamburger.svg" class="h-12" alt="hamburger menu icon" /> -->
 			<!-- </li> -->
@@ -62,7 +58,7 @@
 		</ol>
 	</nav>
 
-	<div id="about" class="card variant-glass-surface m-3 w-full p-8 pt-20 md:m-4">
+	<div id="about" class=" container card variant-glass-surface my-10 w-full p-8 pt-20 md:my-20">
 		<header class="card-header mb-16 text-center text-5xl font-heading-token">About</header>
 
 		<div class="m-3 flex flex-col items-center justify-center gap-8 md:m-4">
@@ -85,42 +81,43 @@
 		<CalendarController />
 	</div>
 
-	<div id="contact-us" class="card variant-glass-surface m-3 w-full p-8 pt-20 md:m-4">
+	<div
+		id="contact-us"
+		class=" container card variant-glass-surface my-10 w-full p-8 pt-20 md:my-20 md:text-lg lg:text-xl"
+	>
 		<header class="card-header mb-16 text-center text-5xl font-heading-token">Contact Us</header>
 
-		<div class="m-3 flex flex-col items-center justify-center gap-8 md:m-4">
-			<p class="unstyled my-8 text-xl">
+		<div class="m-3 flex flex-col items-center justify-center gap-4 md:m-4">
+			<p class="unstyled my-6">
 				Located accross Belleview Elementary School, Belleview UMC sponsors and hosts the Holy
 				Rollers BJJ Club. <br />
 			</p>
-			<div class="flex w-full items-start justify-evenly gap-10">
+			<div
+				class="flex w-full flex-col items-start justify-center gap-6 md:flex-row md:justify-evenly"
+			>
 				<div class="h-full w-full">
-					<h3 class="unstyled text-center text-2xl">Address</h3>
-					<p class="unstyled flex flex-col items-center justify-start text-lg">
-						<br />
-						<a
-							href="https://www.google.com/maps/place/Belleview+United+Methodist+Church/@29.0555551,-82.0599103,17z/data=!3m1!4b1!4m6!3m5!1s0x88e7d1c600279c15:0xba8cf7130c9e9460!8m2!3d29.0555504!4d-82.0573354!16s%2Fg%2F1tf1cl1r?entry=ttu"
-							class="unstyled text-primary-500 hover:text-primary-600"
-						>
+					<h3 class="unstyled mb-10 text-center text-2xl md:mb-0">Address</h3>
+					<div
+						class="my-0 flex flex-col items-center justify-center gap-10 md:my-8 md:flex-row md:justify-start md:gap-0"
+					>
+						<div>
 							Belleview United Methodist Church <br />
-							5640 SE Brown Rd, Belleview, FL 34420 <br />
-						</a>
+							5640 SE Brown Rd, <br />
+							Belleview, FL 34420
+						</div>
 						<a
 							href="https://www.google.com/maps/place/Belleview+United+Methodist+Church/@29.0555551,-82.0599103,17z/data=!3m1!4b1!4m6!3m5!1s0x88e7d1c600279c15:0xba8cf7130c9e9460!8m2!3d29.0555504!4d-82.0573354!16s%2Fg%2F1tf1cl1r?entry=ttu"
 							class="unstyled text-center text-primary-500 hover:text-primary-600"
 						>
-							<br />
-							Google Maps <br />
-							📌
+							Google Maps 📌
 						</a>
-					</p>
+					</div>
 				</div>
 				<div class="h-full w-full">
-					<h3 class="unstyled text-center text-3xl font-token">Email</h3>
+					<h3 class="unstyled text-center text-2xl">Email</h3>
 					<p
-						class=" unstyled flex h-full w-full flex-col items-center justify-center text-xl text-primary-500 hover:text-primary-600"
+						class="unstyled my-4 flex h-full w-full flex-col items-center justify-center text-primary-500 hover:text-primary-600 md:my-8"
 					>
-						<br />
 						<a href="mailto:help@holyrollersbjj.com" class="unstyled text-center">
 							help@holyrollersbjj.com <br />
 							📨
