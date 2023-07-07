@@ -9,8 +9,7 @@
 	let dispatch = createEventDispatcher();
 </script>
 
-Code taked from https://svelte.dev/repl/5aa7d011c2104b0c8906248f66da22ea?version=3.12.1
-<div class="calendar">
+<div class="calendar grid-auto-rows grid w-full grid-cols-[repeat(7, minmax(120px, 1fr))]">
 	{#each headers as header}
 		<span class="day-name" on:click={() => dispatch('headerClick', header)}>{header}</span>
 	{/each}
@@ -44,8 +43,8 @@ Code taked from https://svelte.dev/repl/5aa7d011c2104b0c8906248f66da22ea?version
 
 <style>
 	.calendar {
-		display: grid;
-		width: 100%;
+		/* display: grid; */
+		/* width: 100%; */
 		grid-template-columns: repeat(7, minmax(120px, 1fr));
 		grid-template-rows: 50px;
 		grid-auto-rows: 120px;
