@@ -42,6 +42,8 @@
     let y = year;
     let m = month;
     let d1 = new Date(y, m, randInt(7) + 7);
+    // make an array with all dates in the year
+    // keep only Wednesdays
     items = [
       {
         title: '11:00 Task Early in month',

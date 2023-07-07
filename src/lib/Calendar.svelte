@@ -9,7 +9,7 @@
 	let dispatch = createEventDispatcher();
 </script>
 
-<div class="calendar grid-auto-rows grid w-full grid-cols-[repeat(7, minmax(120px, 1fr))]">
+<div class="calendar grid-auto-rows grid-cols-[repeat(7, minmax(120px, 1fr))] grid w-full">
 	{#each headers as header}
 		<span class="day-name" on:click={() => dispatch('headerClick', header)}>{header}</span>
 	{/each}
@@ -42,6 +42,22 @@
 </div>
 
 <style>
+	/* md */
+	@media (min-width: 768px) {
+	}
+
+	/* lg */
+	@media (min-width: 1024px) {
+	}
+
+	/* xl */
+	@media (min-width: 1280px) {
+	}
+
+	/* 2xl */
+	@media (min-width: 1536px) {
+	}
+
 	.calendar {
 		/* display: grid; */
 		/* width: 100%; */
