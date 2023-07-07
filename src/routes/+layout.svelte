@@ -5,19 +5,27 @@
 	import '@skeletonlabs/skeleton/styles/all.css';
 	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
-	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import { AppShell } from '@skeletonlabs/skeleton';
 	import Hero from '$lib/Hero.svelte';
 	import Nav from '$lib/Nav.svelte';
+	import type { SvelteComponent } from 'svelte';
+
+	let navBar: SvelteComponent;
+	let navBarHeight: number;
 </script>
 
 <AppShell
 	on:scroll={() => {
-		console.log('testing...');
+		navBarHeight = navBar.scrollTop;
+		console.log('position', navBar.position);
 	}}
 >
-	<div class="section flex h-full w-full min-w-[370px] flex-col items-center justify-center">
+	<div
+		class="section flex h-full w-full min-w-[370px] flex-col items-center justify-center {navBarHeight ===
+			0 && 'bg-red-500'}"
+	>
 		<Hero />
-		<Nav />
+		<Nav bind:this={navBar} />
 		<slot />
 	</div>
 </AppShell>
