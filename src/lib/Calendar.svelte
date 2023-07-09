@@ -16,9 +16,12 @@
 
 	{#each days as day}
 		{#if day.enabled}
-			<span class="day" on:click={() => dispatch('dayClick', day)}>{day.name}</span>
+			<span class="day text-gray-700" on:click={() => dispatch('dayClick', day)}>{day.name}</span>
 		{:else}
-			<span class="day day-disabled" on:click={() => dispatch('dayClick', day)}>{day.name}</span>
+			<span
+				class="day day-disabled color-primary-500 text-gray-600"
+				on:click={() => dispatch('dayClick', day)}>{day.name}</span
+			>
 		{/if}
 	{/each}
 
@@ -48,6 +51,56 @@
 
 	/* lg */
 	@media (min-width: 1024px) {
+		.calendar {
+			/* display: grid; */
+			/* width: 100%; */
+			grid-template-columns: repeat(7, minmax(120px, 1fr));
+			grid-template-rows: 50px;
+			grid-auto-rows: 120px;
+		}
+		.day {
+			padding: 14px 20px;
+			font-size: 14px;
+		}
+
+		.day-name {
+			font-size: 12px;
+			line-height: 50px;
+		}
+
+		.task {
+			border-left-width: 3px;
+			padding: 8px 12px;
+			margin: 10px;
+			font-size: 14px;
+		}
+
+		.task--primary {
+			box-shadow: 0 10px 14px rgba(71, 134, 255, 0.4);
+		}
+		.task-detail {
+			top: calc(100% + 8px);
+			padding: 20px;
+			border-radius: 14px;
+			box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+		}
+
+		.task-detail:before {
+			border-width: 8px;
+			margin-left: -8px;
+		}
+
+		.task-detail:after {
+			border-width: 6px;
+			margin-left: -6px;
+		}
+		.task-detail h2 {
+			font-size: 15px;
+		}
+		.task-detail p {
+			margin-top: 4px;
+			font-size: 12px;
+		}
 	}
 
 	/* xl */
@@ -61,20 +114,19 @@
 	.calendar {
 		/* display: grid; */
 		/* width: 100%; */
-		grid-template-columns: repeat(7, minmax(120px, 1fr));
-		grid-template-rows: 50px;
-		grid-auto-rows: 120px;
+		grid-template-columns: repeat(7, minmax(40px, 1fr));
+		grid-template-rows: 16px;
+		grid-auto-rows: 40px;
 		overflow: auto;
 	}
 	.day {
 		border-bottom: 1px solid rgba(166, 168, 179, 0.12);
 		border-right: 1px solid rgba(166, 168, 179, 0.12);
 		text-align: right;
-		padding: 14px 20px;
+		padding: 5px 10px;
 		letter-spacing: 1px;
-		font-size: 14px;
+		font-size: 10px;
 		box-sizing: border-box;
-		color: #98a0a6;
 		position: relative;
 		z-index: 1;
 	}
@@ -121,12 +173,12 @@
 		grid-column: 7/7;
 	}
 	.day-name {
-		font-size: 12px;
+		font-size: 10px;
 		text-transform: uppercase;
 		color: #e9a1a7;
 		text-align: center;
 		border-bottom: 1px solid rgba(166, 168, 179, 0.12);
-		line-height: 50px;
+		line-height: 25px;
 		font-weight: 500;
 	}
 	.day-disabled {
@@ -137,15 +189,14 @@
 	}
 
 	.task {
-		border-left-width: 3px;
-		padding: 8px 12px;
-		margin: 10px;
+		border-left-width: 2px;
+		padding: 4px 6px;
+		margin: 5px;
 		border-left-style: solid;
-		font-size: 14px;
+		font-size: 12px;
 		position: relative;
 		align-self: center;
 		z-index: 2;
-		border-radius: 15px;
 	}
 	.task--warning {
 		border-left-color: #fdb44d;
@@ -168,23 +219,23 @@
 		color: #0a5eff;
 	}
 	.task--primary {
-		background: #4786ff;
+		/* background: var(--color-surface-500); */
 		border: 0;
 		border-radius: 14px;
 		color: #f00;
-		box-shadow: 0 10px 14px rgba(71, 134, 255, 0.4);
+		box-shadow: 0 5px 7px rgba(71, 134, 255, 0.4);
 	}
 	.task-detail {
 		position: absolute;
 		left: 0;
-		top: calc(100% + 8px);
+		top: calc(100% + 4px);
 		background: #efe;
 		border: 1px solid rgba(166, 168, 179, 0.2);
 		color: #100;
-		padding: 20px;
+		padding: 10px;
 		box-sizing: border-box;
 		border-radius: 14px;
-		box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 		z-index: 2;
 	}
 	.task-detail:after,
@@ -200,22 +251,22 @@
 	}
 	.task-detail:before {
 		border-bottom-color: rgba(166, 168, 179, 0.2);
-		border-width: 8px;
-		margin-left: -8px;
+		border-width: 4px;
+		margin-left: -4px;
 	}
 	.task-detail:after {
 		border-bottom-color: #fff;
-		border-width: 6px;
-		margin-left: -6px;
+		border-width: 3px;
+		margin-left: -3px;
 	}
 	.task-detail h2 {
-		font-size: 15px;
+		font-size: 12px;
 		margin: 0;
 		color: #91565d;
 	}
 	.task-detail p {
-		margin-top: 4px;
-		font-size: 12px;
+		margin-top: 2px;
+		font-size: 10px;
 		margin-bottom: 0;
 		font-weight: 500;
 		color: rgba(81, 86, 93, 0.7);

@@ -47,7 +47,7 @@
     items = [
       {
         title: '11:00 Task Early in month',
-        className: 'task--primary',
+        className: 'task--primary bg-surface-500',
         date: new Date(y, m, randInt(6)),
         len: randInt(4) + 1
       },
