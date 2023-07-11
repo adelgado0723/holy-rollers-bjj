@@ -9,7 +9,7 @@
 	let dispatch = createEventDispatcher();
 </script>
 
-<div class="calendar grid-auto-rows grid-cols-[repeat(7, minmax(120px, 1fr))] grid w-full">
+<div class="calendar">
 	{#each headers as header}
 		<span class="day-name" on:click={() => dispatch('headerClick', header)}>{header}</span>
 	{/each}
@@ -45,77 +45,12 @@
 </div>
 
 <style>
-	/* md */
-	@media (min-width: 768px) {
-	}
-
-	/* lg */
-	@media (min-width: 1024px) {
-		.calendar {
-			/* display: grid; */
-			/* width: 100%; */
-			grid-template-columns: repeat(7, minmax(120px, 1fr));
-			grid-template-rows: 50px;
-			grid-auto-rows: 120px;
-		}
-		.day {
-			padding: 14px 20px;
-			font-size: 14px;
-		}
-
-		.day-name {
-			font-size: 12px;
-			line-height: 50px;
-		}
-
-		.task {
-			border-left-width: 3px;
-			padding: 8px 12px;
-			margin: 10px;
-			font-size: 14px;
-		}
-
-		.task--primary {
-			box-shadow: 0 10px 14px rgba(71, 134, 255, 0.4);
-		}
-		.task-detail {
-			top: calc(100% + 8px);
-			padding: 20px;
-			border-radius: 14px;
-			box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-		}
-
-		.task-detail:before {
-			border-width: 8px;
-			margin-left: -8px;
-		}
-
-		.task-detail:after {
-			border-width: 6px;
-			margin-left: -6px;
-		}
-		.task-detail h2 {
-			font-size: 15px;
-		}
-		.task-detail p {
-			margin-top: 4px;
-			font-size: 12px;
-		}
-	}
-
-	/* xl */
-	@media (min-width: 1280px) {
-	}
-
-	/* 2xl */
-	@media (min-width: 1536px) {
-	}
-
 	.calendar {
-		/* display: grid; */
-		/* width: 100%; */
+		display: grid;
+		width: 100%;
+		height: 100%;
 		grid-template-columns: repeat(7, minmax(40px, 1fr));
-		grid-template-rows: 16px;
+		grid-template-rows: 18px;
 		grid-auto-rows: 40px;
 		overflow: auto;
 	}
@@ -190,10 +125,10 @@
 
 	.task {
 		border-left-width: 2px;
-		padding: 4px 6px;
-		margin: 5px;
+		padding: 2px 3px;
+		margin: 2px;
 		border-left-style: solid;
-		font-size: 12px;
+		font-size: 10px;
 		position: relative;
 		align-self: center;
 		z-index: 2;
@@ -220,10 +155,11 @@
 	}
 	.task--primary {
 		/* background: var(--color-surface-500); */
+    @apply bg-surface-200 text-secondary-500;
 		border: 0;
 		border-radius: 14px;
-		color: #f00;
 		box-shadow: 0 5px 7px rgba(71, 134, 255, 0.4);
+    
 	}
 	.task-detail {
 		position: absolute;
@@ -270,5 +206,69 @@
 		margin-bottom: 0;
 		font-weight: 500;
 		color: rgba(81, 86, 93, 0.7);
+	}
+
+	/* md */
+	@media (min-width: 768px) {
+	}
+
+	/* lg */
+	@media (min-width: 1024px) {
+		.calendar {
+			grid-template-columns: repeat(7, minmax(120px, 1fr));
+			grid-template-rows: 32px;
+			grid-auto-rows: 82px;
+		}
+		.day {
+			padding: 14px 20px;
+			font-size: 14px;
+		}
+
+		.day-name {
+			font-size: 12px;
+			line-height: 50px;
+		}
+
+		.task {
+			border-left-width: 3px;
+			padding: 8px 12px;
+			margin: 10px;
+			font-size: 14px;
+		}
+
+		.task--primary {
+			box-shadow: 0 10px 14px rgba(71, 134, 255, 0.4);
+		}
+		.task-detail {
+			top: calc(100% + 8px);
+			padding: 20px;
+			border-radius: 14px;
+			box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+		}
+
+		.task-detail:before {
+			border-width: 8px;
+			margin-left: -8px;
+		}
+
+		.task-detail:after {
+			border-width: 6px;
+			margin-left: -6px;
+		}
+		.task-detail h2 {
+			font-size: 15px;
+		}
+		.task-detail p {
+			margin-top: 4px;
+			font-size: 12px;
+		}
+	}
+
+	/* xl */
+	@media (min-width: 1280px) {
+	}
+
+	/* 2xl */
+	@media (min-width: 1536px) {
 	}
 </style>
