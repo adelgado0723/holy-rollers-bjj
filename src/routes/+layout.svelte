@@ -31,7 +31,7 @@
 					? 'w-0 opacity-0'
 					: ''}"
 				><header
-					class="absolute crumb ml-4 md:ml-6 xl:ml-8 text-lg font-heading-token md:text-xl lg:ml-6 lg:text-2xl xl:text-3xl"
+					class="md:absolute crumb ml-4 md:ml-6 xl:ml-8 text-lg font-heading-token md:text-xl lg:ml-6 lg:text-2xl xl:text-3xl"
 				>
 					HR
 				</header></a

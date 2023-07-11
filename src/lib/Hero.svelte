@@ -3,7 +3,7 @@
 	import { Avatar } from '@skeletonlabs/skeleton';
 </script>
 
-<div class="mb-16 flex w-full flex-col items-center justify-center gap-8">
+<div class="mb-14 md:mb-72 flex w-full flex-col items-center justify-center gap-8">
 	<div class="relative flex w-40 items-center justify-center self-start md:w-52 lg:w-64 xl:w-80">
 		<div
 			class="absolute left-1 top-1 z-[-2] h-36 w-36 rounded-full bg-primary-200 md:h-48 md:w-48 lg:h-60 lg:w-60 xl:h-72 xl:w-72"
