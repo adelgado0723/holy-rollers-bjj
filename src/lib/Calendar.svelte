@@ -1,12 +1,30 @@
 <script lang="ts">
 	import { createEventDispatcher, onMount } from 'svelte';
-	import type { Day, Item } from '$lib/Calendar';
+	import { ItemType, type Day, type Item } from '$lib/Calendar';
 
 	export var headers: string[] = [];
 	export let days: Day[] = [];
 	export let items: Item[] = [];
 
 	let dispatch = createEventDispatcher();
+
+  // TODO: Move this logic into rendering time and conditionally render the item
+	function getItemTypeClasses(item: Item) {
+		switch (item.type) {
+			case ItemType.Info:
+				return 'task--info';
+			case ItemType.Warning:
+				return 'task--warning';
+			case ItemType.Danger:
+				return 'task--danger';
+			case ItemType.Primary:
+				return 'task--primary';
+			case ItemType.Detail:
+				return 'task--detail';
+			default:
+				return '';
+		}
+	}
 </script>
 
 <div class="calendar">
@@ -16,19 +34,16 @@
 
 	{#each days as day}
 		{#if day.enabled}
-			<span class="day text-gray-700" on:click={() => dispatch('dayClick', day)}>{day.name}</span>
+			<span class="day" on:click={() => dispatch('dayClick', day)}>{day.name}</span>
 		{:else}
-			<span
-				class="day day-disabled color-primary-500 text-gray-600"
-				on:click={() => dispatch('dayClick', day)}>{day.name}</span
-			>
+			<span class="day day-disabled" on:click={() => dispatch('dayClick', day)}>{day.name}</span>
 		{/if}
 	{/each}
 
 	{#each items as item}
 		<section
 			on:click={() => dispatch('itemClick', item)}
-			class="task {item.className}"
+			class="task {item.className} {getItemTypeClasses(item)}"
 			style="grid-column: {item.startCol} / span {item.len};      
       grid-row: {item.startRow};  
       align-self: {item.isBottom ? 'end' : 'center'};"
@@ -49,18 +64,19 @@
 		display: grid;
 		width: 100%;
 		height: 100%;
-		grid-template-columns: repeat(7, minmax(40px, 1fr));
+		grid-template-columns: repeat(7, minmax(45px, 1fr));
 		grid-template-rows: 18px;
-		grid-auto-rows: 40px;
+		grid-auto-rows: 45px;
 		overflow: auto;
 	}
 	.day {
+		@apply text-gray-700;
 		border-bottom: 1px solid rgba(166, 168, 179, 0.12);
 		border-right: 1px solid rgba(166, 168, 179, 0.12);
 		text-align: right;
 		padding: 5px 10px;
 		letter-spacing: 1px;
-		font-size: 10px;
+		font-size: 8px;
 		box-sizing: border-box;
 		position: relative;
 		z-index: 1;
@@ -125,10 +141,10 @@
 
 	.task {
 		border-left-width: 2px;
-		padding: 2px 3px;
+		padding: 2px;
 		margin: 2px;
 		border-left-style: solid;
-		font-size: 10px;
+		font-size: 8px;
 		position: relative;
 		align-self: center;
 		z-index: 2;
@@ -140,72 +156,34 @@
 		margin-top: -5px;
 	}
 	.task--danger {
-		border-left-color: #fa607e;
-		grid-column: 2 / span 3;
-		grid-row: 3;
-		margin-top: 15px;
-		background: rgba(253, 197, 208, 0.7);
-		color: #f8254e;
+		@apply variant-glass-error col-[2_/_span_3] row-[3] mt-3 border-l-error-500 text-secondary-500;
 	}
 	.task--info {
-		border-left-color: #4786ff;
-		margin-top: 15px;
-		background: rgba(218, 231, 255, 0.7);
-		color: #0a5eff;
+		@apply variant-glass-warning mt-3 border-l-warning-500 text-secondary-500;
 	}
 	.task--primary {
-		/* background: var(--color-surface-500); */
-    @apply bg-surface-200 text-secondary-500;
-		border: 0;
-		border-radius: 14px;
-		box-shadow: 0 5px 7px rgba(71, 134, 255, 0.4);
-    
+		@apply variant-ghost-warning rounded border-0 text-secondary-500 shadow-lg;
+		/* box-shadow: 0 5px 7px rgba(71, 134, 255, 0.4); */
 	}
 	.task-detail {
-		position: absolute;
-		left: 0;
-		top: calc(100% + 4px);
-		background: #efe;
-		border: 1px solid rgba(166, 168, 179, 0.2);
-		color: #100;
-		padding: 10px;
-		box-sizing: border-box;
-		border-radius: 14px;
-		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-		z-index: 2;
+		@apply variant-glass-primary absolute left-0 top-[calc(100%+4px)] z-10 rounded-lg border border-primary-300 p-2 text-secondary-500 shadow-lg;
 	}
 	.task-detail:after,
 	.task-detail:before {
-		bottom: 100%;
-		left: 30%;
-		border: solid transparent;
+		@apply pointer-events-none absolute bottom-full left-1/3 h-0 w-0 border border-solid border-transparent;
 		content: ' ';
-		height: 0;
-		width: 0;
-		position: absolute;
-		pointer-events: none;
 	}
 	.task-detail:before {
-		border-bottom-color: rgba(166, 168, 179, 0.2);
-		border-width: 4px;
-		margin-left: -4px;
+		@apply ml-[-4px] border-4 border-b-primary-500;
 	}
 	.task-detail:after {
-		border-bottom-color: #fff;
-		border-width: 3px;
-		margin-left: -3px;
+		@apply ml-[-3px] border-[3px] border-b-white;
 	}
 	.task-detail h2 {
-		font-size: 12px;
-		margin: 0;
-		color: #91565d;
+		@apply m-0 text-xs text-primary-700;
 	}
 	.task-detail p {
-		margin-top: 2px;
-		font-size: 10px;
-		margin-bottom: 0;
-		font-weight: 500;
-		color: rgba(81, 86, 93, 0.7);
+		@apply mb-0 mt-2 text-[8px] font-medium text-secondary-500;
 	}
 
 	/* md */

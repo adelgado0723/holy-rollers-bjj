@@ -39,6 +39,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"dayjs": "^1.11.9",
 		"http-server": "^14.1.1"
 	}
 }

@@ -2,6 +2,7 @@ export type Item = {
   isBottom?: boolean;
   detailHeader?: string;
   detailContent?: string;
+  type?: ItemType;
   className?: string;
   startCol?: number;
   len?: number;
@@ -10,6 +11,14 @@ export type Item = {
   date?: Date;
   vlen?: number;
 };
+
+export enum ItemType {
+  Info = "info",
+  Warning = "warning",
+  Danger = "danger",
+  Primary = "primary",
+  Detail = "detail",
+}
 
 export type Day = {
   enabled: boolean;
