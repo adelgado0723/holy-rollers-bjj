@@ -53,39 +53,39 @@
 			}
 		}
 
-		let d1 = new Date(y, m, randInt(7) + 7);
+		/* let d1 = new Date(y, m, randInt(7) + 7); */
 
-		items = [
-			{
-				title: '11:00 Task Early in month',
-				className: 'task--primary',
-				date: new Date(y, m, randInt(6)),
-				len: randInt(4) + 1
-			},
-			{ title: '7:30 Wk 2 tasks', className: 'task--warning', date: d1, len: randInt(4) + 2 },
-			{
-				title: 'Overlapping Stuff (isBottom:true)',
-				date: d1,
-				className: 'task--info',
-				len: 4,
-				isBottom: true
-			},
-			{
-				title: '10:00 More Stuff to do',
-				date: new Date(y, m, randInt(7) + 14),
-				className: 'task--info',
-				len: randInt(4) + 1,
-				detailHeader: 'Difficult',
-				detailContent: 'But not especially so'
-			},
-			{
-				title: 'All day task',
-				date: new Date(y, m, randInt(7) + 21),
-				className: 'task--danger',
-				len: 1,
-				vlen: 2
-			}
-		];
+		/* items = [ */
+		/* 	{ */
+		/* 		title: '11:00 Task Early in month', */
+		/* 		className: 'task--primary', */
+		/* 		date: new Date(y, m, randInt(6)), */
+		/* 		len: randInt(4) + 1 */
+		/* 	}, */
+		/* 	{ title: '7:30 Wk 2 tasks', className: 'task--warning', date: d1, len: randInt(4) + 2 }, */
+		/* 	{ */
+		/* 		title: 'Overlapping Stuff (isBottom:true)', */
+		/* 		date: d1, */
+		/* 		className: 'task--info', */
+		/* 		len: 4, */
+		/* 		isBottom: true */
+		/* 	}, */
+		/* 	{ */
+		/* 		title: '10:00 More Stuff to do', */
+		/* 		date: new Date(y, m, randInt(7) + 14), */
+		/* 		className: 'task--info', */
+		/* 		len: randInt(4) + 1, */
+		/* 		detailHeader: 'Difficult', */
+		/* 		detailContent: 'But not especially so' */
+		/* 	}, */
+		/* 	{ */
+		/* 		title: 'All day task', */
+		/* 		date: new Date(y, m, randInt(7) + 21), */
+		/* 		className: 'task--danger', */
+		/* 		len: 1, */
+		/* 		vlen: 2 */
+		/* 	} */
+		/* ]; */
 
 		dates.forEach((d) => {
 			items.push({
