@@ -11,7 +11,7 @@
 <!-- <div id="schedule" class="m-3 w-full pt-14 md:m-4"> -->
 <CardContainer id="schedule">
 	<h1>Schedule</h1>
-	<p class="m-3 md:m-4">This is a test paragraph... calendar. Add to calender option?</p>
+	<p class="my-5 md:my-6">Visit our next class!</p>
 	<CalendarController />
 </CardContainer>
 

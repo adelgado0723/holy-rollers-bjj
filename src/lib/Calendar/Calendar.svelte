@@ -18,7 +18,7 @@
 		<span
 			class="day-name"
 			on:click={() => dispatch('headerClick', header)}
-			on:keydown={() => dispatch('hea erClickKeydown', header)}
+			on:keydown={() => dispatch('headerClickKeydown', header)}
 			on:keyup={() => dispatch('headerClickKeyup', header)}>{header}</span
 		>
 	{/each}

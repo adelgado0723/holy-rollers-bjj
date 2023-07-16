@@ -24,7 +24,7 @@
 	let now = new Date();
 	let year = now.getFullYear(); //	this is the month & year displayed
 	let month = now.getMonth();
-	let eventText = 'Click an item or date';
+	/* let eventText = 'Click an item or date'; */
 
 	var days: Day[] = []; //	The days to display in each box
 
@@ -40,8 +40,6 @@
 	var items: Item[] = [];
 
 	function initMonthItems() {
-		let y = year;
-		let m = month;
 		const startOfMonth = dayjs().startOf('month');
 		const endOfMonth = dayjs().endOf('month');
 		// make an array with all dates in the month being displayed
@@ -93,7 +91,7 @@
 				date: d,
 				className: 'task--primary',
 				len: 1,
-        isBottom: true
+				isBottom: true
 				/* vlen: 2 */
 			});
 		});
@@ -166,23 +164,23 @@
 		return null;
 	}
 
-	function itemClick(e: Item) {
-		eventText = 'itemClick ' + JSON.stringify(e) + ' localtime=' + e?.date?.toString();
-	}
-	function dayClick(e: Day) {
-		eventText = 'onDayClick ' + JSON.stringify(e) + ' localtime=' + e?.date?.toString();
-	}
-	function headerClick(e: string) {
-		eventText = 'onHheaderClick ' + JSON.stringify(e);
-	}
-	function next() {
+	/* function itemClick(e: Item) { */
+	/* 	eventText = 'itemClick ' + JSON.stringify(e) + ' localtime=' + e?.date?.toString(); */
+	/* } */
+	/* function dayClick(e: Day) { */
+	/* 	eventText = 'onDayClick ' + JSON.stringify(e) + ' localtime=' + e?.date?.toString(); */
+	/* } */
+	/* function headerClick(e: string) { */
+	/* 	eventText = 'onHheaderClick ' + JSON.stringify(e); */
+	/* } */
+	function nextMonth() {
 		month++;
 		if (month == 12) {
 			year++;
 			month = 0;
 		}
 	}
-	function prev() {
+	function prevMonth() {
 		if (month == 0) {
 			month = 11;
 			year--;
@@ -193,25 +191,21 @@
 </script>
 
 <div class="calendar-container">
-	<div class="calendar-header">
-		<h1>
-			<button on:click={() => year--}>&Lt;</button>
-			<button on:click={() => prev()}>&lt;</button>
+	<div class="bg-secondary-50 text-secondary-500 text-center py-3 border border-b-secondary-300">
+		<header class="font-token m-0 text-lg">
+			<button class="bg-secondary-50 text-secondary-400 hover:text-secondary-500 border-1 p-1 cursor-pointer outline-0" on:click={() => prevMonth()}>&lt;</button>
 			{monthNames[month]}
 			{year}
-			<button on:click={() => next()}>&gt;</button>
-			<button on:click={() => year++}>&Gt;</button>
-		</h1>
-		{eventText}
+      
+			<button class="bg-secondary-50 text-secondary-400 hover:text-secondary-500 border-1 p-1 cursor-pointer outline-0" on:click={() => nextMonth()}>&gt;</button>
+		</header>
+		<!-- {eventText} -->
 	</div>
 
 	<Calendar
 		{headers}
 		{days}
 		{items}
-		on:dayClick={(e) => dayClick(e.detail)}
-		on:itemClick={(e) => itemClick(e.detail)}
-		on:headerClick={(e) => headerClick(e.detail)}
 	/>
 </div>
 
@@ -224,23 +218,5 @@
 		border-radius: 10px;
 		background: #fff;
 		max-width: 1200px;
-	}
-	.calendar-header {
-		text-align: center;
-		padding: 20px 0;
-		background: #eef;
-		border-bottom: 1px solid rgba(166, 168, 179, 0.12);
-	}
-	.calendar-header h1 {
-		margin: 0;
-		font-size: 18px;
-	}
-	.calendar-header button {
-		background: #eef;
-		border: 1px;
-		padding: 6;
-		color: rgba(81, 86, 93, 0.7);
-		cursor: pointer;
-		outline: 0;
 	}
 </style>
