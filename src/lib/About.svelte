@@ -3,7 +3,7 @@
 </script>
 
 <CardContainer id="about">
-	<header class="card-header my-auto mb-6 text-5xl font-heading-token md:mb-8">About</header>
+	<header class="card-header my-6 text-center text-5xl font-heading-token">About</header>
 
 	<div class="m-3 flex w-full flex-col items-center justify-center md:m-4 md:block md:text-justify">
 		<img

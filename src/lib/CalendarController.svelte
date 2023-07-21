@@ -190,33 +190,23 @@
 	}
 </script>
 
-<div class="calendar-container">
-	<div class="bg-secondary-50 text-secondary-500 text-center py-3 border border-b-secondary-300">
-		<header class="font-token m-0 text-lg">
-			<button class="bg-secondary-50 text-secondary-400 hover:text-secondary-500 border-1 p-1 cursor-pointer outline-0" on:click={() => prevMonth()}>&lt;</button>
+<div class="overflow-hidden rounded-lg bg-white">
+	<div class="border border-b-secondary-300 bg-secondary-50 py-3 text-center text-secondary-500">
+		<header class="m-0 text-lg font-token">
+			<button
+				class="border-1 cursor-pointer bg-secondary-50 p-1 text-secondary-400 outline-0 hover:text-secondary-500"
+				on:click={() => prevMonth()}>&lt;</button
+			>
 			{monthNames[month]}
 			{year}
-      
-			<button class="bg-secondary-50 text-secondary-400 hover:text-secondary-500 border-1 p-1 cursor-pointer outline-0" on:click={() => nextMonth()}>&gt;</button>
+
+			<button
+				class="border-1 cursor-pointer bg-secondary-50 p-1 text-secondary-400 outline-0 hover:text-secondary-500"
+				on:click={() => nextMonth()}>&gt;</button
+			>
 		</header>
 		<!-- {eventText} -->
 	</div>
 
-	<Calendar
-		{headers}
-		{days}
-		{items}
-	/>
+	<Calendar {headers} {days} {items} />
 </div>
-
-<style>
-	.calendar-container {
-		width: 90%;
-		margin: auto;
-		overflow: hidden;
-		box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-		border-radius: 10px;
-		background: #fff;
-		max-width: 1200px;
-	}
-</style>
