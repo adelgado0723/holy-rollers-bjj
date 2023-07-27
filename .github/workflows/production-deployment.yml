@@ -1,29 +1,26 @@
 name: Upload Website To S3
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ['Run Linter Checks and Deploy']
+    types:
+      - completed
 
 jobs:
-  tests:
-    uses: ./.github/workflows/lint-check-and-deploy.yml
   deploy:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
-    - name: Lint/Build Stage
-      needs: [tests]
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{ secrets.AWS_REGION }} 
+      - name: Deploy static site to S3 bucket
+        run: aws s3 sync ./build s3://holyrollersbjj.com --delete --exclude ".*" --size-only
 
-    - name: Deploy static site to S3 bucket
-      run: aws s3 sync ./build s3://holyrollersbjj.com --delete --exclude ".*" --size-only
