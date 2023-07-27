@@ -1,0 +1,45 @@
+#!/usr/bin/env sh
+
+echo -e "${BOLD} Running npm check... ${NORMAL}"
+# fi
+REDBOLD='\033[0;31;1m'
+GREENBOLD='\033[0;32;1m'
+BOLD='\033[1m'
+NORMAL='\033[0m'
+
+# If there are whitespace errors, print the offending file names and fail.
+# exec git diff-index --check --cached $against --
+
+echo "${GREENBOLD} 省 Running prettier formatting! ${NORMAL}"
+npm run format
+
+if [ $? = 0 ]; then
+  echo "${GREENBOLD}  Successfully auto-formatted code.\n省 Proceeding with lint checks! ${NORMAL}"
+else
+  echo "${REDBOLD} Failed auto formatting with prettier. ❌ ${NORMAL}"
+  exit 1
+fi
+
+npm run lint
+if [ $? = 0 ]; then
+  echo "${GREENBOLD}  Successfully completed prettier and eslint check.\n省 Continuing with svelte-kit check! ${NORMAL}"
+else
+  echo "${REDBOLD} Failed lint checks. ❌ ${NORMAL}"
+  exit 1
+fi
+
+npm run check
+if [ $? = 0 ]; then
+  echo "${GREENBOLD}  Successfully complete svelte-kit check.\n省 Ready to build! ${NORMAL}"
+else
+  echo "${REDBOLD} Failed svelte-kit check. ❌ ${NORMAL}"
+  exit 1
+fi
+
+npm run build
+if [ $? = 0 ]; then
+  echo "${GREENBOLD}  Successfully built code.\n Ready to commit!  ${NORMAL}"
+else
+  echo "${REDBOLD} Code check failed. ❌ ${NORMAL}"
+  exit 1
+fi

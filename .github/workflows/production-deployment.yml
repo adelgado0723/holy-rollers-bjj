@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  lint:
-    name: lint
+  check:
+    name: check
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -29,21 +29,26 @@ jobs:
       - run: npm install
       - run: npm run lint
       - run: npm run check
-  build:
-      name: build
-      needs: lint
-      runs-on: ubuntu-latest
-      steps:
-        - run: npm run build
+      - run: npm run build
+
   deploy:
     name: deploy
-    needs: [lint, build]
+    needs: check
     runs-on: ubuntu-latest
-    # strategy:
-    #   matrix:
-    #     node-version: [18.x]
-      # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    strategy:
+      matrix:
+        node-version: [18.x]
+    # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -51,5 +56,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
+      - run: npm install
+
       - name: Deploy static site to S3 bucket
-        run: aws s3 sync ./build s3://holyrollersbjj.com --delete --exclude ".*" --size-only
+        run: npm run deploy
