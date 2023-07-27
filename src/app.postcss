@@ -1,25 +1,28 @@
 /*place global styles here */
-html, body {
+html,
+body {
   @apply h-full overflow-hidden;
 }
 
 @font-face {
-	font-family: 'Poppins-Regular';
-	src: url('/fonts/Poppins-Regular.ttf');
-	font-display: swap;
+  font-family: 'Poppins-Regular';
+  src: url('/fonts/Poppins-Regular.ttf');
+  font-display: swap;
 }
 
 @font-face {
-	font-family: 'BrightwallRegular';
-	src: url('/fonts/BrightwallRegular.ttf');
-	font-display: swap;
+  font-family: 'BrightwallRegular';
+  src: url('/fonts/BrightwallRegular.ttf');
+  font-display: swap;
 }
 
 :root {
-	--theme-rounded-base: 20px;
-	--theme-rounded-container: 4px;
+  --theme-rounded-base: 20px;
+  --theme-rounded-container: 4px;
   --theme-font-family-base: 'Poppins-Regular', sans-serif !important;
   --theme-font-family-heading: 'BrightwallRegular', sans-serif;
 }
 
-body { @apply bg-surface-100-800-token; }
+body {
+  @apply bg-surface-100-800-token;
+}

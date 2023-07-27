@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preload" href="%sveltekit.assets%/fonts/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="%sveltekit.assets%/fonts/BrightwallRegular.ttf" as="font" type="font/ttf" crossorigin />
+    %sveltekit.head%
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" href="%sveltekit.assets%/favicon.png" />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="preload" href="%sveltekit.assets%/fonts/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin />
-  <link rel="preload" href="%sveltekit.assets%/fonts/BrightwallRegular.ttf" as="font" type="font/ttf" crossorigin />
-  %sveltekit.head%
-</head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q96H0EEGKC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q96H0EEGKC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    gtag('config', 'G-Q96H0EEGKC');
+  </script>
 
-  gtag('config', 'G-Q96H0EEGKC');
-</script>
-
-<body data-sveltekit-preload-data="hover" data-theme="seafoam">
-  <div style="display: contents" class="h-full overflow-hidden">%sveltekit.body%</div>
-</body>
-
+  <body data-sveltekit-preload-data="hover" data-theme="seafoam">
+    <div style="display: contents" class="h-full overflow-hidden">%sveltekit.body%</div>
+  </body>
 </html>

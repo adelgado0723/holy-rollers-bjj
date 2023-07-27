@@ -13,11 +13,11 @@ export type Item = {
 };
 
 export enum ItemType {
-  Info = "info",
-  Warning = "warning",
-  Danger = "danger",
-  Primary = "primary",
-  Detail = "detail",
+  Info = 'info',
+  Warning = 'warning',
+  Danger = 'danger',
+  Primary = 'primary',
+  Detail = 'detail'
 }
 
 export type Day = {
