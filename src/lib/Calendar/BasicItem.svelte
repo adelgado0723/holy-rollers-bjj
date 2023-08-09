@@ -30,12 +30,13 @@
 <style>
   .task {
     border-left-width: 2px;
-    padding: 2px;
-    margin: 2px;
+    padding: 4px 0px;
+    margin: 2px 0px;
     border-left-style: solid;
     font-size: 8px;
     position: relative;
     align-self: center;
+
     z-index: 2;
   }
 

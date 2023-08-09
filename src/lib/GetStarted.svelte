@@ -1,5 +1,6 @@
 <script lang="ts">
   import CardContainer from '$lib/CardContainer.svelte';
+  import DownloadButton from './DownloadButton.svelte';
 </script>
 
 <CardContainer id="get-started">
@@ -11,23 +12,22 @@
   </p>
 
   <div class="m-4 mb-8">
-    <div class="flex items-center justify-center gap-4">
-      <header class="m-4 text-4xl font-heading-token">Register</header>
-
+    <header class="m-8 text-4xl font-heading-token">Register</header>
+    <div class="mx-10 flex items-center justify-center gap-14 text-left">
       Download and fill out the registration forms. Bring the forms to your first class. Have funl!
+      <DownloadButton href="documents/ActivityWaiverForm.pdf" download="ActivityWaiverForm.pdf"
+        >Activity Waiver</DownloadButton
+      >
     </div>
-    <a href="documents/ActivityWaiverForm.pdf" download="ActivityWaiverForm.pdf" class="btn variant-filled"
-      >Activity Waiver 🢃</a
-    >
   </div>
 
   <div class="m-4">
-    <div class="flex items-center justify-center gap-4">
-      <header class="m-4 text-4xl font-heading-token">Guildlines</header>
+    <header class="m-8 text-4xl font-heading-token">Guildlines</header>
+    <div class="mx-10 flex items-center justify-center gap-14 text-left">
       Prepare by reading the class guidelines. This will help you prepare to get the most out of your training.
+      <DownloadButton href="documents/ClassGuidelines.pdf" download="ClassGuidelines.pdf"
+        >Class Guidelines</DownloadButton
+      >
     </div>
-    <a href="documents/ClassGuidelines.pdf" download="ClassGuidelines.pdf" class="btn variant-filled"
-      >Class Guidelines 🢃</a
-    >
   </div>
 </CardContainer>
