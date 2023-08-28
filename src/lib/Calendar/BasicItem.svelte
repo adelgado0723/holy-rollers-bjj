@@ -35,7 +35,7 @@
     border-left-style: solid;
     font-size: 8px;
     position: relative;
-    align-self: center;
+    align-self: end;
 
     z-index: 2;
   }

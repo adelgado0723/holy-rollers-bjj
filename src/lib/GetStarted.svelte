@@ -1,6 +1,6 @@
 <script lang="ts">
   import CardContainer from '$lib/CardContainer.svelte';
-  import DownloadButton from './DownloadButton.svelte';
+  import DownloadButton from '$lib/DownloadButton.svelte';
 </script>
 
 <CardContainer id="get-started">

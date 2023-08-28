@@ -1,5 +1,8 @@
 <script>
   import CardContainer from './CardContainer.svelte';
+  import MapPinIcon from '$lib/Icons/MapPinIcon.svelte';
+  import MailIcon from '$lib/Icons/MailIcon.svelte';
+  import MapIcon from '$lib/Icons/MapIcon.svelte';
 </script>
 
 <CardContainer id="contact-us">
@@ -11,8 +14,13 @@
     </p>
     <div class="flex w-full flex-col items-start justify-center gap-6 md:flex-row md:justify-evenly">
       <div class="mb-6 h-full w-full md:mb-0">
-        <h3 class="unstyled mb-10 text-center text-xl md:text-2xl">📌 Address</h3>
-        <div class="my-0 flex flex-col items-center justify-center gap-6">
+        <h3 class="unstyled mb-10 flex items-center justify-center gap-4 text-center text-xl md:text-2xl">
+          <span class="h-6 lg:h-8">
+            <MapPinIcon />
+          </span>
+          Address
+        </h3>
+        <div class="my-0 flex flex-col items-center justify-center gap-8">
           <div class="text-center">
             Belleview United Methodist Church <br />
             5640 SE Brown Rd, <br />
@@ -22,12 +30,20 @@
             href="https://www.google.com/maps/place/Belleview+United+Methodist+Church/@29.0555551,-82.0599103,17z/data=!3m1!4b1!4m6!3m5!1s0x88e7d1c600279c15:0xba8cf7130c9e9460!8m2!3d29.0555504!4d-82.0573354!16s%2Fg%2F1tf1cl1r?entry=ttu"
             class="unstyled btn variant-filled text-center text-primary-500 hover:text-primary-600 md:text-lg"
           >
+            <span class="mr-3 h-6 lg:h-8">
+              <MapIcon />
+            </span>
             Google Maps
           </a>
         </div>
       </div>
       <div class="h-full w-full">
-        <h3 class="unstyled mb-10 text-center text-xl md:text-2xl">📨 Email</h3>
+        <h3 class="unstyled mb-10 flex items-center justify-center gap-4 text-center text-xl md:text-2xl">
+          <span class="h-6 lg:h-8">
+            <MailIcon />
+          </span>
+          Email
+        </h3>
         <p class="unstyled flex h-full w-full flex-col items-center text-primary-500 hover:text-primary-600">
           <a href="mailto:help@holyrollersbjj.com" class="unstyled text-center align-top">
             help@holyrollersbjj.com <br />

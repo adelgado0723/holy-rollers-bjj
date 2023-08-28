@@ -7,7 +7,13 @@
 </script>
 
 {#if item.detailHeader || item.detailContent}
-  <DetailItem {item} className="variant-ghost-surface rounded border-0 text-secondary-500 shadow-lg lg:shadow-xl " />
+  <DetailItem
+    {item}
+    className="variant-ghost-surface rounded border-0 text-secondary-500 shadow-lg lg:shadow-xl h-[50%] flex items-center"
+  />
 {:else}
-  <BasicItem {item} className="variant-ghost-surface rounded border-0 text-secondary-500 shadow-lg lg:shadow-xl " />
+  <BasicItem
+    {item}
+    className="variant-ghost-surface rounded border-0 text-secondary-500 shadow-lg lg:shadow-xl h-[50%] flex items-center"
+  />
 {/if}

@@ -26,17 +26,26 @@
   {#each days as day}
     {#if day.enabled}
       <span
-        class="day text-gray-700"
+        class="day flex w-full items-start justify-end text-gray-700"
         on:click={() => dispatch('dayClick', day)}
         on:keydown={() => dispatch('dayClickKeydown', day)}
-        on:keyup={() => dispatch('dayClickKeyup', day)}>{day.name}</span
+        on:keyup={() => dispatch('dayClickKeyup', day)}
       >
+        <span class="variant-glass-secondary z-30 mr-0.5 mt-0.5 inline-block rounded-[100%] p-[2px] text-center">
+          {day.name}
+        </span>
+      </span>
     {:else}
       <span
         class="day day-disabled text-gray-700"
         on:click={() => dispatch('dayClick', day)}
         on:keydown={() => dispatch('dayClickKeydown', day)}
-        on:keyup={() => dispatch('dayClickKeyup', day)}>{day.name}</span
+        on:keyup={() => dispatch('dayClickKeyup', day)}
+      >
+        <span class="bg-primary rounded-xl">
+          {day.name}
+        </span>
+      </span>
       >
     {/if}
   {/each}
@@ -71,13 +80,7 @@
   .day {
     border-bottom: 1px solid rgba(166, 168, 179, 0.12);
     border-right: 1px solid rgba(166, 168, 179, 0.12);
-    text-align: right;
-    padding: 5px 10px;
-    letter-spacing: 1px;
     font-size: 8px;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 1;
   }
   .day:nth-of-type(7n + 7) {
     border-right: 0;
@@ -125,7 +128,6 @@
     font-size: 10px;
     text-transform: uppercase;
     color: #e9a1a7;
-    text-align: center;
     border-bottom: 1px solid rgba(166, 168, 179, 0.12);
     line-height: 25px;
     font-weight: 500;
@@ -138,8 +140,8 @@
   }
 
   /* md */
-  @media (min-width: 768px) {
-  }
+  /* @media (min-width: 768px) { */
+  /* } */
 
   /* lg */
   @media (min-width: 1024px) {
@@ -148,22 +150,17 @@
       grid-template-rows: 32px;
       grid-auto-rows: 82px;
     }
-    .day {
-      padding: 14px 20px;
-      font-size: 14px;
-    }
 
     .day-name {
       font-size: 12px;
-      line-height: 50px;
     }
   }
 
   /* xl */
-  @media (min-width: 1280px) {
-  }
+  /* @media (min-width: 1280px) { */
+  /* } */
 
   /* 2xl */
-  @media (min-width: 1536px) {
-  }
+  /* @media (min-width: 1536px) { */
+  /* } */
 </style>

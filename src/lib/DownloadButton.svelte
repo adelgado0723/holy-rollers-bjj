@@ -1,5 +1,5 @@
 <script lang="ts">
-  import DownloadIcon from '$lib/DownloadIcon.svelte';
+  import DownloadIcon from '$lib/Icons/DownloadIcon.svelte';
 </script>
 
 <a
